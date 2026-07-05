@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://handymatemaldives.com/sitemap.xml
