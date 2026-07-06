@@ -21,8 +21,12 @@
 <meta name="keywords" content="handyman Maldives, plumber Male, electrician Maldives, aircon repair Maldives, painting, tiling, apartment moving, ceiling roofing, home repair Maldives" />
 <meta name="geo.region" content="MV" />
 <meta name="geo.placename" content="Malé, Maldives" />
-<link rel="icon" type="image/png" href="logo.png" />
-<link rel="apple-touch-icon" href="logo.png" />
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+<link rel="icon" type="image/png" sizes="144x144" href="/favicon-144.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="manifest.webmanifest" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-title" content="HandyMate MV" />
@@ -162,24 +166,14 @@
   .callpill{background:var(--amber-soft);color:var(--amber-d);border:1px solid #bfe9f0}
   .callpill:hover{background:var(--amber);color:#fff;border-color:transparent;box-shadow:0 10px 22px -10px rgba(14,155,180,.5);transform:translateY(-2px)}
   .hamburger{display:none}
-  @media(max-width:920px){.menu{display:none}.hamburger{display:grid}
-    /* show WhatsApp as a compact green icon button next to Call Now */
-    .nav-actions .nav-book{display:grid;width:44px;height:44px;padding:0;border-radius:50%;
-      background:var(--wa);border-color:transparent;box-shadow:0 10px 22px -10px rgba(34,197,94,.55)}
-    .nav-actions .nav-book span{display:none}
-    .nav-actions .nav-book svg{width:21px;height:21px}
-    .nav-actions .nav-book:hover{background:#1ea34f}
-  }
+  @media(max-width:920px){.menu{display:none}.hamburger{display:grid}}
   /* Phones: stack the logo ABOVE the brand text so the name never crowds the action buttons */
   @media(max-width:600px){
-    .brand{flex-direction:column;align-items:center;text-align:center;gap:5px}
-    .brand img{width:42px;height:42px}
-    .brand .logo-txt{font-size:.9rem;line-height:1.12;max-width:120px}
-    .brand small{font-size:.5rem;letter-spacing:.14em;margin-top:2px}
+    .nav{padding:10px 0}
     .nav-left{gap:9px}
-    .nav-actions{gap:8px}
-    .nav .callpill{padding:9px 14px;font-size:.93rem}
-    .nav-actions .nav-book{width:42px;height:42px}
+    .brand .logo-txt{font-size:.98rem;line-height:1.12;max-width:none;white-space:nowrap}
+    .brand small{font-size:.52rem;letter-spacing:.14em;margin-top:2px}
+    .nav .btn{padding:10px 16px;font-size:.9rem}
   }
 
   /* Search */
@@ -247,6 +241,20 @@
   .hc-guard .hc-ic{background:#eafaf0;color:#16a34a}
   @media(max-width:920px){.hero{padding:48px 0 56px}.hero-grid{grid-template-columns:1fr;gap:34px}
     .hero-photo{aspect-ratio:16/11;max-height:380px}.hc-rating{left:10px}.hc-guard{right:10px}}
+  @media(max-width:600px){
+    .searchwrap .wrap{padding:10px 0}
+    .hero{padding:14px 0 26px}
+    .hero-grid{gap:18px}
+    .badge{margin-bottom:10px;padding:5px 12px;font-size:.78rem}
+    .hero h1{font-size:1.5rem;margin-bottom:8px}
+    .hero p.sub{font-size:.95rem;line-height:1.5;margin-bottom:14px}
+    .hero-actions{gap:10px}
+    .hero-actions .btn{padding:12px 22px;font-size:.93rem}
+    .hero-photo{max-height:300px}
+    .services{padding:24px 0 36px}
+    .services .eyebrow{margin-bottom:10px}
+    .services .sgrid{margin-top:16px}
+  }
 
   /* Trust strip */
   .strip{background:var(--navy);color:#cdd8ec}
@@ -371,25 +379,42 @@
   .cta-band .hero-actions{position:relative;justify-content:center}
 
   /* Footer */
-  footer{background:var(--navy);color:#9fb0cc;padding:62px 0 26px}
-  .fgrid{display:grid;grid-template-columns:1.8fr 1fr 1.1fr;gap:36px}
-  footer .brand{color:#fff;margin-bottom:16px}
+  footer{background:var(--navy);color:#9fb0cc;padding:64px 0 0}
+  .fgrid{display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:44px}
+  footer .brand{color:#fff;margin-bottom:14px}
   footer .brand small{color:#8fa1bf}
-  footer h5{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8093b0;margin-bottom:15px;font-weight:700}
-  .fcol li{list-style:none;margin-bottom:10px;font-size:.93rem;display:flex;align-items:center;gap:9px}
-  .fcol li svg{width:16px;height:16px;color:var(--amber);flex:0 0 auto}
-  .sbadge{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;flex:0 0 auto;box-shadow:0 3px 8px -2px rgba(0,0,0,.35)}
-  .fcol li .sbadge svg{width:16px;height:16px;color:#fff}
-  .fcol a:hover{color:#fff}
-  .fbadge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:#bff0d0;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.28);border-radius:99px;padding:8px 14px;margin-top:16px}
-  .fbadge svg{width:16px;height:16px}
-  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:42px;padding-top:22px;text-align:center;color:#7f92b0;font-size:.85rem}
-  .copy a{color:#cdd8ec;font-weight:600}
+  footer h5{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8093b0;margin-bottom:16px;font-weight:700}
+  .f-about{max-width:300px;color:#9fb0cc;font-size:.94rem;margin-bottom:18px}
+  .fbadge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:#bff0d0;
+    background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:99px;padding:9px 16px}
+  .fbadge svg{width:15px;height:15px}
+  /* services: semantic links with dot + slide-right hover */
+  .f-links{list-style:none}
+  .f-links a{display:inline-flex;align-items:center;gap:9px;padding:7px 0;font-size:.93rem;color:#9fb0cc;
+    cursor:pointer;transition:color .2s ease,transform .2s ease}
+  .f-links a::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--amber);flex:0 0 auto}
+  .f-links a:hover{color:#fff;transform:translateX(4px)}
+  /* contact: uniform icon grid */
+  .f-contact{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .f-contact li{display:flex;align-items:center;gap:12px;padding:5px 0;font-size:.93rem}
+  .f-ic{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;flex:0 0 auto;color:#fff;
+    box-shadow:0 3px 10px -2px rgba(0,0,0,.35)}
+  .f-ic svg{width:17px;height:17px}
+  .f-contact a{color:#cdd8ec;font-weight:500}
+  .f-contact a:hover{color:#fff}
+  .f-note{display:flex;align-items:center;gap:11px;margin-top:18px;padding:13px 16px;border-radius:12px;
+    background:rgba(14,155,180,.12);border:1px solid rgba(14,155,180,.3);color:#a8dbe6;font-size:.87rem;line-height:1.5}
+  .f-note svg{width:18px;height:18px;flex:0 0 auto;color:var(--amber)}
+  /* bottom bar */
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding:20px 0 24px;
+    display:flex;align-items:center;justify-content:space-between;gap:10px 18px;flex-wrap:wrap;color:#7f92b0;font-size:.85rem}
+  .copy a{color:#cdd8ec;font-weight:500}
   .copy a:hover{color:var(--amber)}
-  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr;gap:30px}}
-  @media(max-width:520px){.fgrid{grid-template-columns:1fr}
-    .fcol ul{display:grid;grid-template-columns:1fr 1fr;gap:11px 16px}
-    .fcol li{margin-bottom:0}}
+  .f-legal{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr;gap:34px}}
+  @media(max-width:560px){.fgrid{grid-template-columns:1fr;gap:30px}
+    .f-links{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+    .copy{justify-content:center;text-align:center}}
 
   /* Floating WhatsApp */
   .float-wa{position:fixed;right:22px;bottom:22px;z-index:80;background:var(--wa);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(34,197,94,.6);transition:transform .2s,box-shadow .2s}
@@ -415,16 +440,16 @@
   .drawer-scroll{overflow-y:auto;padding:18px 18px calc(28px + env(safe-area-inset-bottom));flex:1}
   .verify{display:flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;color:#16a34a;background:#eafaf0;border:1px solid #bdecca;border-radius:99px;padding:8px 14px;margin-bottom:18px}
   .verify .v-dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:ping 2s infinite}
-  .drawer-cta{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-  .drawer-cta .btn{width:100%}
-  .drawer-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .drawer-cta .dcall-big{padding:17px 26px;font-size:1.06rem;font-weight:700}
+  .drawer-cta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+  .drawer-cta .btn{width:100%;padding:11px 6px;font-size:.86rem;gap:6px}
+  .drawer-cta .btn svg{width:16px;height:16px}
   .drawer-nav{display:flex;flex-direction:column;margin-bottom:8px}
-  .drawer-nav a{padding:13px 4px;font-weight:500;color:var(--body);border-bottom:1px solid var(--line);font-size:1rem;transition:.15s}
+  .drawer-nav a{display:flex;align-items:center;gap:11px;padding:12px 4px;font-weight:500;color:var(--body);border-bottom:1px solid var(--line);font-size:.98rem;transition:.15s}
+  .drawer-nav a svg{width:17px;height:17px;color:var(--amber-d);flex:0 0 auto}
   .drawer-nav a:hover{color:var(--amber-d);padding-left:8px}
   .drawer-h{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 12px;font-weight:700;font-family:'Poppins'}
-  .drawer-svcs{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-  .drawer-svcs a{display:flex;align-items:center;gap:9px;background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:10px 11px;font-size:.85rem;font-weight:500;color:var(--ink);transition:.18s}
+  .drawer-svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+  .drawer-svcs a{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:5px;background:var(--bg-2);border:1px solid var(--line);border-radius:11px;padding:10px 4px;font-size:.72rem;font-weight:600;line-height:1.2;color:var(--ink);transition:.18s}
   .drawer-svcs a:hover{border-color:var(--amber);transform:translateY(-2px)}
   .drawer-svcs a .em{flex:0 0 auto;color:var(--amber-d);display:grid;place-items:center}
   .drawer-svcs a .em svg{width:18px;height:18px}
@@ -498,6 +523,7 @@
   <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></symbol>
   <symbol id="ic-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12l-8.4 8.4a2.1 2.1 0 1 1-3-3L12 9"/><path d="M17.6 15L22 10.6"/><path d="M20.9 11.7l-1.2-1.2c-.6-.6-.9-1.4-.9-2.2v-.9L16 4.6A5.6 5.6 0 0 0 12 3H9l.9.8A6.2 6.2 0 0 1 12 8.4v1.6l2 2h.9c.8 0 1.6.3 2.2.9l1.2 1.2"/></symbol>
   <symbol id="ic-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="ic-quest" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.2a2.4 2.4 0 1 1 3.9 1.9c-.8.6-1.5 1.1-1.5 2v.3"/><path d="M12 16.8h.01"/></symbol>
   <symbol id="ic-brick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18"/><path d="M9 3v6M15 3v6M6 9v6M12 9v6M18 9v6M9 15v6M15 15v6"/></symbol>
 </svg>
 
@@ -506,7 +532,6 @@
     <div class="nav-left">
       <button class="icon-btn hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg><use href="#bars"/></svg></button>
       <a class="brand" href="#top">
-        <img src="logo.png" alt="HandyMate Maldives logo" />
         <span class="logo-txt"><span data-i18n="brand.name">HandyMate Maldives</span><small data-i18n="brand.sub">Home Repair Services</small></span>
       </a>
     </div>
@@ -519,8 +544,7 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-actions">
-      <a class="btn callpill" id="nav-call" aria-label="Call now"><svg><use href="#phone"/></svg> Call Now</a>
-      <a class="btn btn-primary nav-book" id="nav-wa"><svg><use href="#wa"/></svg> <span data-i18n="btn.book_now">WhatsApp</span></a>
+      <a class="btn btn-primary" id="nav-call" aria-label="Call now"><svg><use href="#phone"/></svg> Call Now</a>
     </div>
   </div>
 </header>
@@ -538,18 +562,16 @@
   <div class="drawer-scroll">
     <div class="verify"><span class="v-dot"></span> Online now · Fast reply on WhatsApp</div>
     <div class="drawer-cta">
-      <a class="btn btn-sky dcall-big" id="drawer-call"><svg><use href="#phone"/></svg> Call Now</a>
-      <div class="drawer-cta-row">
-        <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
-        <a class="btn btn-viber" id="drawer-viber"><svg><use href="#viber"/></svg> Viber</a>
-      </div>
+      <a class="btn btn-sky" id="drawer-call"><svg><use href="#phone"/></svg> Call</a>
+      <a class="btn btn-wa" id="drawer-wa"><svg><use href="#wa"/></svg> WhatsApp</a>
+      <a class="btn btn-viber" id="drawer-viber"><svg><use href="#viber"/></svg> Viber</a>
     </div>
     <nav class="drawer-nav">
-      <a href="#services" data-i18n="nav.services">Services</a>
-      <a href="#why" data-i18n="why.eyebrow">Why choose us</a>
-      <a href="#how" data-i18n="nav.howitworks">How it works</a>
-      <a href="#reviews" data-i18n="nav.reviews">Our Promise</a>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#services"><svg><use href="#ic-grid"/></svg><span data-i18n="nav.services">Services</span></a>
+      <a href="#why"><svg><use href="#ic-sparkle"/></svg><span data-i18n="why.eyebrow">Why choose us</span></a>
+      <a href="#how"><svg><use href="#ic-bolt"/></svg><span data-i18n="nav.howitworks">How it works</span></a>
+      <a href="#reviews"><svg><use href="#shield"/></svg><span data-i18n="nav.reviews">Our Promise</span></a>
+      <a href="#faq"><svg><use href="#ic-quest"/></svg><span data-i18n="nav.faq">FAQ</span></a>
     </nav>
     <h6 class="drawer-h" data-i18n="drawer.services">Our services</h6>
     <div class="drawer-svcs" id="drawerSvcs"></div>
@@ -608,13 +630,6 @@
       <p class="lead" data-i18n="sec.svc_lead">Professional help for homes, apartments, offices and resorts — all under one roof.</p>
     </div>
     <div class="sgrid" id="sgrid"></div>
-    <div class="hero-trust" style="justify-content:center;margin-top:40px">
-      <div class="avs">
-        <span style="background:#0e9bb4">A</span><span style="background:#0f2240">M</span>
-        <span style="background:#0b7d92">S</span><span style="background:#1d4ed8">+</span>
-      </div>
-      <div><small data-i18n="hero.trust">Serving homes, offices &amp; resorts across Malé</small></div>
-    </div>
   </div>
 </section>
 
@@ -632,6 +647,14 @@
     </div>
   </div>
 </section>
+
+<div class="wrap hero-trust" style="justify-content:center;margin:0 auto 34px">
+  <div class="avs">
+    <span style="background:#0e9bb4">A</span><span style="background:#0f2240">M</span>
+    <span style="background:#0b7d92">S</span><span style="background:#1d4ed8">+</span>
+  </div>
+  <div><small data-i18n="hero.trust">Serving homes, offices &amp; resorts across Malé</small></div>
+</div>
 
 <!-- TRUST STRIP -->
 <div class="strip">
@@ -748,30 +771,36 @@
     <div class="fgrid">
       <div class="fcol">
         <div class="brand"><img src="logo.png" alt="HandyMate Maldives" style="width:46px;height:46px;border-radius:11px"><span class="logo-txt"><span data-i18n="brand.name">HandyMate Maldives</span><small data-i18n="brand.sub">Home Repair Services</small></span></div>
-        <p style="max-width:300px;color:#9fb0cc" data-i18n="foot.about">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
+        <p class="f-about" data-i18n="foot.about">Your one-stop solution for home, apartment, office and resort maintenance across the Maldives.</p>
         <span class="fbadge"><svg><use href="#pin"/></svg> Serving Malé, Hulhumalé &amp; Vilimalé</span>
       </div>
       <div class="fcol">
         <h5 data-i18n="foot.services">Services</h5>
-        <ul>
-          <li><a class="fsvc" data-svc="Apartment Moving">Apartment Moving</a></li><li><a class="fsvc" data-svc="Painting &amp; Tiling">Painting &amp; Tiling</a></li><li><a class="fsvc" data-svc="Plumbing">Plumbing</a></li>
-          <li><a class="fsvc" data-svc="Aircon Repair">Aircon Repair</a></li><li><a class="fsvc" data-svc="Ceiling &amp; Roofing">Ceiling &amp; Roofing</a></li><li><a class="fsvc" data-svc="Electrical Work">Electrical Work</a></li>
+        <ul class="f-links">
+          <li><a class="fsvc" data-svc="Apartment Moving">Apartment Moving</a></li>
+          <li><a class="fsvc" data-svc="Painting &amp; Tiling">Painting &amp; Tiling</a></li>
+          <li><a class="fsvc" data-svc="Plumbing">Plumbing</a></li>
+          <li><a class="fsvc" data-svc="Aircon Repair">Aircon Repair</a></li>
+          <li><a class="fsvc" data-svc="Ceiling &amp; Roofing">Ceiling &amp; Roofing</a></li>
+          <li><a class="fsvc" data-svc="Electrical Work">Electrical Work</a></li>
+          <li><a class="fsvc" data-svc="Masonry">Masonry</a></li>
+          <li><a class="fsvc" data-svc="General Repairs">General Repairs</a></li>
         </ul>
       </div>
       <div class="fcol">
         <h5 data-i18n="foot.contact">Get in touch</h5>
-        <ul>
-          <li><span class="sbadge" style="background:#25D366"><svg><use href="#wa"/></svg></span> <a id="footer-wa">WhatsApp us</a></li>
-          <li><span class="sbadge" style="background:#7360F2"><svg><use href="#viber"/></svg></span> <a id="footer-viber">Viber</a></li>
-          <li><span class="sbadge" style="background:#1877F2"><svg><use href="#fb"/></svg></span> <a href="https://www.facebook.com/share/18tm8DMVhN/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook page</a></li>
-          <li><svg><use href="#phone"/></svg> <a id="footer-call">+960 723 7764</a></li>
-          <li><svg><use href="#clock"/></svg> <span>Call or WhatsApp anytime to book an appointment</span></li>
+        <ul class="f-contact">
+          <li><span class="f-ic" style="background:#25D366"><svg><use href="#wa"/></svg></span> <a id="footer-wa">WhatsApp us</a></li>
+          <li><span class="f-ic" style="background:#7360F2"><svg><use href="#viber"/></svg></span> <a id="footer-viber">Viber</a></li>
+          <li><span class="f-ic" style="background:#1877F2"><svg><use href="#fb"/></svg></span> <a href="https://www.facebook.com/share/18tm8DMVhN/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook page</a></li>
+          <li><span class="f-ic" style="background:var(--amber)"><svg><use href="#phone"/></svg></span> <a id="footer-call">+960 723 7764</a></li>
         </ul>
+        <div class="f-note"><svg><use href="#clock"/></svg> <span>Call or WhatsApp anytime to book an appointment</span></div>
       </div>
     </div>
     <div class="copy">
-      <div style="margin-bottom:12px"><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="guarantee.html">Service Guarantee</a></div>
-      © <span id="year"></span> HandyMate Maldives · Built with care in the Maldives 🇲🇻
+      <span>© <span id="year"></span> HandyMate Maldives · Built with care in the Maldives 🇲🇻</span>
+      <span class="f-legal"><a href='/privacy'>Privacy Policy</a> · <a href='/terms'>Terms of Service</a> · <a href='/guarantee'>Service Guarantee</a></span>
     </div>
   </div>
 </footer>
@@ -858,7 +887,7 @@
   // Viber chat buttons — NOT counted in the WhatsApp conversion (kept separate
   // so the WhatsApp numbers in Google Ads stay honest)
   const viberLink = `viber://chat?number=${encodeURIComponent(VIBER_NUMBER)}`;
-  ["cta-viber","drawer-viber","footer-viber"].forEach(id=>{
+  ["cta-viber","drawer-viber","footer-viber","nav-viber"].forEach(id=>{
     const el=document.getElementById(id);
     if(el){ el.href=viberLink; }
   });
@@ -898,9 +927,12 @@
   drawer.querySelectorAll('.drawer-nav a, .drawer-svcs a').forEach(a=>a.addEventListener("click",()=>setTimeout(closeDrawer,80)));
 
   // populate the drawer's service shortcuts (open WhatsApp with that service)
+  const SVC_SHORT = {"Apartment Moving":"Moving","Aircon Repair & Servicing":"AC Service","Ceiling & Roofing":"Roofing","Electrical Work":"Electrical","General Repairs":"Repairs"};
   function renderDrawerSvcs(){
-    document.getElementById("drawerSvcs").innerHTML = services.map(s=>
-      `<a href="${bookWa(s.t)}" target="_blank" rel="noopener"><span class="em"><svg><use href="${s.i}"/></svg></span>${svcName(s)}</a>`).join("");
+    document.getElementById("drawerSvcs").innerHTML = services.map(s=>{
+      const nm = (L()==="dv" && s.dv) ? s.dv : (SVC_SHORT[s.t] || s.t);
+      return `<a href="${bookWa(s.t)}" target="_blank" rel="noopener"><span class="em"><svg><use href="${s.i}"/></svg></span>${nm}</a>`;
+    }).join("");
   }
   renderDrawerSvcs();
 
