@@ -857,19 +857,28 @@
   // hidden — app switch on mobile, wa.me tab on desktop). If WhatsApp never
   // opens, nothing is counted. Max 1 conversion per visitor session, so
   // repeated taps can never inflate the numbers.
-  const ADS_CONVERSION = 'AW-18234086732/xUFiCKW5hsIcEMyq2PZD';
+  const ADS_CONVERSION  = 'AW-18234086732/xUFiCKW5hsIcEMyq2PZD'; // WhatsApp contact
+  const CALL_CONVERSION = 'AW-18234086732/B2QgCISm88wcEMyq2PZD'; // Website call click
   const CONV_WINDOW_MS = 3000; // hand-over must happen within 3s of the click
-  let convArmedAt = 0;
+  let convArmedAt = 0, callArmedAt = 0;
   function armContactConversion(){ convArmedAt = Date.now(); }
-  function fireIfHandedOver(){
-    if(!convArmedAt || Date.now() - convArmedAt > CONV_WINDOW_MS) return;
-    convArmedAt = 0;
+  function armCallConversion(){ callArmedAt = Date.now(); }
+  function fireOnce(key, payload){
     try{
-      if(sessionStorage.getItem('hm_conv_fired')) return;
-      sessionStorage.setItem('hm_conv_fired','1');
+      if(sessionStorage.getItem(key)) return;
+      sessionStorage.setItem(key,'1');
     }catch(e){}
-    if(typeof gtag === 'function'){
-      gtag('event','conversion',{ 'send_to': ADS_CONVERSION, 'transport_type':'beacon' });
+    if(typeof gtag === 'function'){ gtag('event','conversion', payload); }
+  }
+  function fireIfHandedOver(){
+    const now = Date.now();
+    if(convArmedAt && now - convArmedAt <= CONV_WINDOW_MS){
+      convArmedAt = 0;
+      fireOnce('hm_conv_fired', { 'send_to': ADS_CONVERSION, 'transport_type':'beacon' });
+    }
+    if(callArmedAt && now - callArmedAt <= CONV_WINDOW_MS){
+      callArmedAt = 0;
+      fireOnce('hm_call_fired', { 'send_to': CALL_CONVERSION, 'value': 1.0, 'currency': 'USD', 'transport_type':'beacon' });
     }
   }
   document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='hidden') fireIfHandedOver(); });
@@ -882,7 +891,8 @@
   });
   // Call buttons (tracked separately by the existing "Phone call lead" conversion)
   ["cta-call","footer-call","nav-call","drawer-call","drawer-call2"].forEach(id=>{
-    const el=document.getElementById(id); if(el) el.href="tel:"+CALL_NUMBER;
+    const el=document.getElementById(id);
+    if(el){ el.href="tel:"+CALL_NUMBER; el.addEventListener("click",armCallConversion); }
   });
   // Viber chat buttons — NOT counted in the WhatsApp conversion (kept separate
   // so the WhatsApp numbers in Google Ads stay honest)
