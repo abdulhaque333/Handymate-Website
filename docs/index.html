@@ -594,7 +594,7 @@
 <div class="searchwrap">
   <div class="wrap">
     <form class="search" id="searchForm" role="search" autocomplete="off">
-      <input type="search" id="svcSearch" data-i18n-ph="search.ph" placeholder="Search a service — Moving, AC, plumbing…" aria-label="Search services" />
+      <input type="search" id="svcSearch" dir="auto" data-i18n-ph="search.ph" placeholder="Search a service — Moving, AC, plumbing…" aria-label="Search services" />
       <button type="submit" class="sbtn" aria-label="Search"><svg><use href="#search"/></svg></button>
     </form>
     <div class="search-results" id="searchResults"></div>
@@ -953,9 +953,19 @@
       </a>`).join("");
     searchResults.classList.add("show");
   }
-  services.forEach(s=>{ s._tok = (s.t+" "+s.d+" "+(s.k||"")).toLowerCase().split(/[^a-z0-9/]+/).filter(Boolean); });
+  services.forEach(s=>{
+    s._tok = (s.t+" "+s.d+" "+(s.k||"")).toLowerCase().split(/[^a-z0-9/]+/).filter(Boolean);
+    /* Dhivehi (Thaana) tokens — matching only; results always render via svcName() */
+    s._dv  = ((s.dv||"")+" "+(s.dvd||"")).split(/[^ހ-޿]+/).filter(Boolean);
+  });
 
   function scoreMatch(s,term){
+    if(/[ހ-޿]/.test(term)){
+      if(s._dv.some(w=>w===term)) return 1;
+      if(s._dv.some(w=>w.startsWith(term))) return 2;
+      if(term.length>=3 && ((s.dv||"")+" "+(s.dvd||"")).includes(term)) return 4;
+      return -1;
+    }
     const title=s.t.toLowerCase();
     if(title===term) return 0;
     if(title.startsWith(term)) return 1;
